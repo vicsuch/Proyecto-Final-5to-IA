@@ -6,11 +6,6 @@ import math
 def GetFileList(dir = 'files'):
     return os.listdir(dir)
 
-def OpenFile(dir, folder = 'files'):
-    return open(
-        os.path.join(folder, dir)
-    )
-
 def WhatTipeOfFile(s): #Pass file
     ia_list = ['.png', '.jpeg']
     if s in ia_list:
@@ -18,11 +13,11 @@ def WhatTipeOfFile(s): #Pass file
     else:
         return 1
 
-def GetFileType(file_name):
+def GetFileType(name):
     file_type = ''
-    for i in range(1, len(file_name)):
-        if file_name[-i] == '.': file_type += '.' ; break
-        file_type += file_name[-i]
+    for i in range(1, len(name)):
+        if name[-i] == '.': file_type += '.' ; break
+        file_type += name[-i]
     
     a = ''
     for i in range(len(file_type)):
@@ -30,20 +25,19 @@ def GetFileType(file_name):
         
     return a
 
-def AI(file):
-    return GetFileType(file.name)
+def AI(file, folder):
+    return GetFileType(file)
 
-def Clasify(file):
-    name = file.name
+def Clasify(name, folder = 'files'):
     file_type = GetFileType(name)
     file_AI_usable = WhatTipeOfFile(file_type)
 
     if file_AI_usable == 0:
-        return AI(file)
+        return AI(name, folder)
     
     return file_type
 
 f = GetFileList()
 for i in f:
-    b = Clasify(OpenFile(i)) 
+    b = Clasify(i) 
     print(b)
