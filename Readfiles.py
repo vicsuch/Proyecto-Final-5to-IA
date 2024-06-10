@@ -1,7 +1,4 @@
-from ast import Return
-from ctypes.wintypes import INT
 import os
-import math
 
 def GetFileList(dir = 'files'):
     return os.listdir(dir)
