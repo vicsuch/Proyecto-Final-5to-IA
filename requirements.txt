@@ -1,4 +1,4 @@
-setuptools==69.0.2
+setuptools==66.1.1
 google.colab
 keras
 pillow
