@@ -1,6 +1,6 @@
 name = 'Clasificador2'
 path = '/content/drive/MyDrive/Proyecto5to/IA/'
-
+print('Ejecutando IA ...')
 from google.colab import drive
 drive.mount('/content/drive')
 
@@ -21,7 +21,7 @@ with open(path + name + '.json') as f:
 
 from PIL import Image
 from keras import utils
-from tensorflow.image import resize
+#from tensorflow.image import resize
 
 def Padding(i):
   padding = (0, image_desired_size[0] - np.shape(i)[0]), (0, image_desired_size[1] - np.shape(i)[1]), (0, 0)
