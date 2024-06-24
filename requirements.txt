@@ -1,3 +1,3 @@
 google.colab
-keras == 2.8.9
+keras == 2.8.0
 pillow
