@@ -1,10 +1,9 @@
 name = 'Clasificador2'
-path = '/content/drive/MyDrive/Proyecto5to/IA/'
+path = 'C:/Users/Vicente Such/Documents/'
 print('Ejecutando IA ...')
-from google.colab import drive
-drive.mount('/content/drive')
 
 import json
+import numpy as np
 from keras.models import Sequential
 from keras.saving import load_model
 
@@ -14,10 +13,10 @@ model_type = load_model(path + name + '.h5')
 image_desired_size = None
 types = None
 with open(path + name + '.json') as f:
-    d = json.load(f)
-    print(d)
-    image_desired_size = d['image_desired_size']
-    types = d['image_types']
+  d = json.load(f)
+  print(d)
+  image_desired_size = d['image_desired_size']
+  types = d['image_types']
 
 from PIL import Image
 from keras import utils
@@ -52,14 +51,13 @@ def resize_image_with_aspect_ratio(img, base_width=None, base_height=None):
   else:
       raise ValueError("Specify either base_width or base_height")
 
-  return img.resize(new_size, Image.ANTIALIAS)
+  return img.resize(new_size, Image.LANCZOS)
 
 def ReadImage(path):
   #img = load_img(path)
   img = Image.open(path)
   img = resize_image_with_aspect_ratio(img, image_desired_size[0], image_desired_size[1])
   img = utils.img_to_array(img)
-  #img = resize(img, image_desired_size, preserve_aspect_ratio=True)
   img = img * 1/255 # Dividimos el valor de los pixeles por 255 para que el valor permanesca entre 1 y 0
   return img
 
@@ -70,6 +68,12 @@ def GetPred(array):
       max = i
   return types[max]
 
-def PassImage(path):
-    a = model_type.predict(ReadImage(path))
-    return GetPred(a)
+def PassImage(image):
+  image = resize_image_with_aspect_ratio(image, image_desired_size[0], image_desired_size[1])
+  image = utils.img_to_array(image)
+  print('shape: ', image.shape)
+  image = image * 1/255
+  image = np.expand_dims(image, axis=0)
+  a = model_type.predict(image, verbose = 0)[0]
+  print(a)
+  return GetPred(a)

@@ -5,7 +5,8 @@ def GetFileList(dir = 'files'):
     return os.listdir(dir)
 
 def WhatTipeOfFile(s): #Pass file
-    ia_list = ['.png', '.jpeg']
+    s = s.lower()
+    ia_list = ['png', 'jpeg']
     if s in ia_list:
         return 0
     else:
@@ -23,19 +24,20 @@ def GetFileType(name):
         
     return a
 
-def AI(file, folder):
-    return EjecutarIA.PassImage(folder + file)
+def AI(image):
+    print('IA...')
+    return EjecutarIA.PassImage(image)
 
-def Clasify(name, folder = 'files'):
-    file_type = GetFileType(name)
+def Clasify(image):
+    print('Clasificando...')
+    file_type = image.format
+    print('file_type:', file_type)
     file_AI_usable = WhatTipeOfFile(file_type)
 
     if file_AI_usable == 0:
-        return AI(name, folder)
+        print('Pasando imagen a IA')
+        a = AI(image)
+        print('IA_result,', a)
+        return a
     
     return file_type
-
-f = GetFileList()
-for i in f:
-    b = Clasify(i) 
-    print(b)
