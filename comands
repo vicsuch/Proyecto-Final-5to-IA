@@ -1,0 +1,10 @@
+GIT LFS COMANDS:
+git lfs track "*.h5"
+git lfs push origin main
+git lfs migrate import --include="*.h5"
+git add .
+git commit -m 'lfs active'
+git push
+
+RUN SERVER COMANDS:
+uvicorn API:app --host 0.0.0.0 --port 8000 --reload
