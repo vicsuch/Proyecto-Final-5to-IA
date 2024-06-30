@@ -3,3 +3,5 @@ pillow
 fastapi
 numpy
 keras
+json
+uvicorn
