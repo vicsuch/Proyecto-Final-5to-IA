@@ -2,4 +2,3 @@ keras
 pillow
 fastapi
 numpy
-keras
