@@ -1,5 +1,5 @@
 import os
-import EjecutarIA
+#import EjecutarIA
 
 def GetFileList(dir = 'files'):
     return os.listdir(dir)
@@ -26,7 +26,8 @@ def GetFileType(name):
 
 def AI(image):
     print('IA...')
-    return EjecutarIA.PassImage(image)
+    return 'a'
+    #return EjecutarIA.PassImage(image)
 
 def Clasify(image):
     print('Clasificando...')
