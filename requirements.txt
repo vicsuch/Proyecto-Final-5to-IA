@@ -3,4 +3,3 @@ pillow
 fastapi
 numpy
 tensorflow
-json
