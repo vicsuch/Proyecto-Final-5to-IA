@@ -1,0 +1,11 @@
+{
+    "image_desired_size": [
+        200,
+        200
+    ],
+    "image_types": [
+        "chest_XRay",
+        "hips_XRay",
+        "head_ct"
+    ]
+}
