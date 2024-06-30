@@ -2,3 +2,4 @@ keras
 pillow
 fastapi
 numpy
+tensorflow
