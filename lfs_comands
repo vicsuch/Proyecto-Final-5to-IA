@@ -1,0 +1,5 @@
+git lfs track "*.h5"
+git lfs push origin main
+git add .
+git commit -m 'lfs active'
+git push
