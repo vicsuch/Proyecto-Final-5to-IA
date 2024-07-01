@@ -1,5 +1,5 @@
 name = 'Clasificador2'
-path = 'C:/Users/Vicente Such/Documents/Proyecto-Final-5to-IA/Cosas/'
+path = '/Cosas/'
 print('Ejecutando IA ...')
 
 import json
