@@ -30,3 +30,6 @@ Hips
 https://www.kaggle.com/datasets/tawsifurrahman/aseptic-loose-hip-implant-xray-database
 Brain MRI
 https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset
+Kidney
+https://www.kaggle.com/datasets/safurahajiheidari/kidney-stone-images
+
